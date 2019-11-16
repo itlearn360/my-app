@@ -1,0 +1,10 @@
+environments:
+- name: acceptance
+- name: production
+service:
+  port: 8080
+  pathPatterns:
+  - /*
+  pipeline:
+   provider: GitHub
+   repo: itlearn360/my-app
