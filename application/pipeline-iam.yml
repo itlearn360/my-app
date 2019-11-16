@@ -2,7 +2,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: MU IAM roles and keys for pipeline
 Resources:
-CodeBuildCIRole:
+  CodeBuildCIRole:
     Type: AWS::IAM::Role
     Properties:
       Policies:
