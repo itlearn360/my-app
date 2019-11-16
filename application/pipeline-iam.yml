@@ -2,7 +2,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: MU IAM roles and keys for pipeline
 Resources:
-  CodeBuildCIRole:
+CodeBuildCIRole:
     Type: AWS::IAM::Role
     Properties:
       RoleName: !Sub ${Namespace}-pipeline-${ServiceName}-ci-${AWS::Region}
@@ -72,6 +72,4 @@ Resources:
             - s3:PutObject
             Resource:
             - !Sub arn:${AWS::Partition}:s3:::${Namespace}-codedeploy-${AWS::Region}-${AWS::AccountId}/*
-            Effect: Allow
-            - !Sub arn:${AWS::Partition}:iam::${AWS::AccountId}:role/${Namespace}-pipeline-${ServiceName}-mu-prod-${AWS::Region}
             Effect: Allow
