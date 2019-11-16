@@ -5,7 +5,7 @@ Resources:
   CodeBuildCIRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !Sub ${Namespace}-pipeline-${ServiceName}-ci-${AWS::Region}
+      RoleName: mu-pipeline-myapp-ci-us-east-1
       AssumeRolePolicyDocument:
         Statement:
         - Effect: Allow
