@@ -10,6 +10,7 @@ service:
     provider: GitHub
     repo: itlearn360/my-app
 
+templates:
 parameters:
   'mu-environment-acceptance':
    CodePipelineRoleArn : arn:aws:sts::002838516900:assumed-role/example-role/muaccess-Session
