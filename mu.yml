@@ -9,3 +9,7 @@ service:
    source:
     provider: GitHub
     repo: itlearn360/my-app
+
+extensions:
+- url: https://github.com/stelligent/mu-cfn_nag/archive/v0.3.zip
+- url: application
