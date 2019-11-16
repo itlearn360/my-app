@@ -13,7 +13,7 @@ service:
 templates:
 parameters:
   'mu-environment-acceptance':
-   CodePipelineRoleArn : arn:aws:sts::002838516900:assumed-role/example-role/muaccess-Session
+   CodePipelineRoleArn: arn:aws:sts::002838516900:assumed-role/example-role/muaccess-Session
 
 extensions:
 - url: https://github.com/stelligent/mu-cfn_nag/archive/v0.3.zip
