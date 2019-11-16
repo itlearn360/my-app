@@ -73,6 +73,5 @@ Resources:
             Resource:
             - !Sub arn:${AWS::Partition}:s3:::${Namespace}-codedeploy-${AWS::Region}-${AWS::AccountId}/*
             Effect: Allow
-
             - !Sub arn:${AWS::Partition}:iam::${AWS::AccountId}:role/${Namespace}-pipeline-${ServiceName}-mu-prod-${AWS::Region}
             Effect: Allow
