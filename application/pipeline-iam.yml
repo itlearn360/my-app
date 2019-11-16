@@ -5,6 +5,17 @@ Resources:
   CodeBuildCIRole:
     Type: AWS::IAM::Role
     Properties:
+      RoleName: !Sub ${Namespace}-pipeline-${ServiceName}-ci-${AWS::Region}
+      AssumeRolePolicyDocument:
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - codebuild.amazonaws.com
+            - iam.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
       Policies:
        - PolicyName: iam-role
          PolicyDocument:
