@@ -10,6 +10,8 @@ Resources:
         Statement:
         - Effect: Allow
           Principal:
+            AWS:
+              - arn:aws:iam::002838516900:root
             Service:
             - codebuild.amazonaws.com
             - iam.amazonaws.com
