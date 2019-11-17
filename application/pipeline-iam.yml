@@ -2,31 +2,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: MU IAM roles and keys for pipeline
 Resources:
-  CodeBuildCIRole:
+  CodeBuildCDAcptRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: mu-pipeline-myapp-ci-us-east-1
-      AssumeRolePolicyDocument:
-        Statement:
-        - Effect: Allow
-          Principal:
-            AWS:
-              - arn:aws:iam::002838516900:root
-            Service:
-            - codebuild.amazonaws.com
-            - iam.amazonaws.com
-          Action:
-          - sts:AssumeRole
-      Path: "/"
       Policies:
-       - PolicyName: iam-role
-         PolicyDocument:
-           Version: '2012-10-17'
-           Statement:
-           - Action:
-             - iam:*
-             Resource: 'arn:aws:iam::*:role/aws-service-role/iam.amazonaws.com/IAMFullAccess*'
-             Condition:
-               StringLike:
-                 iam:AWSServiceName: iam.amazonaws.com
-             Effect: Allow
+      - PolicyName: assume-mu-acpt-pipeline
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Action:
+            - sts:AssumeRole
+            Resource:
+            - !Sub arn:aws:iam::002838516900:role/mu-pipeline-my-app-mu-acpt-us-east-1
+            Effect: Allow
