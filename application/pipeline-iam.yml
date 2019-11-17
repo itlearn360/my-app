@@ -5,12 +5,13 @@ Resources:
   CodeBuildCDAcptRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !Sub mu-pipeline-my-app-mu-acpt-us-east-1
-      AssumeRolePolicyDocument:
-        Statement:
+      Policies:
+      - PolicyName: deploy-acpt-env-1
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
         - Effect: Allow
           Principal:
             AWS: "*"
           Action:
           - sts:AssumeRole
-      Path: "/"
