@@ -1,0 +1,16 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: MU IAM role for CloudFormation
+Resources:
+  CloudFormationRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Policies:
+      - PolicyName: ec2-vol-per
+        PolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+          - Action:
+            - ec2:Describe*
+            - iam:CreateServiceLinkedRole
+            Resource: "arn:aws:ec2:*:*:volume/*"
