@@ -2,6 +2,19 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: MU IAM roles and keys for pipeline
 Resources:
+  
+  SampleManagedPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: AllowAllUsersToListAccounts
+            Effect: Allow
+            Action:
+              - iam:*
+            Resource: *
+
   CodeBuildCIRole:
     Type: AWS::IAM::Role
     Properties:
@@ -18,15 +31,3 @@ Resources:
       Path: "/"
       ManagedPolicyArns:
         - !Ref SampleManagedPolicy
-      
-  SampleManagedPolicy:
-    Type: 'AWS::IAM::ManagedPolicy'
-    Properties:
-      PolicyDocument:
-        Version: 2012-10-17
-        Statement:
-          - Sid: AllowAllUsersToListAccounts
-            Effect: Allow
-            Action:
-              - 'iam:*'
-            Resource: '*'
