@@ -5,13 +5,11 @@ Resources:
   CodeBuildCDAcptRole:
     Type: AWS::IAM::Role
     Properties:
-      Policies:
-      - PolicyName: deploy-acpt-env-1
-        PolicyDocument:
-          Version: '2012-10-17'
-          Statement:
+      AssumeRolePolicyDocument:
+        Statement:
         - Effect: Allow
           Principal:
             AWS: "*"
           Action:
           - sts:AssumeRole
+      Path: "/"
