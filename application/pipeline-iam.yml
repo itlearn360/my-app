@@ -16,6 +16,8 @@ Resources:
           Action:
           - sts:AssumeRole
       Path: "/"
+      ManagedPolicyArns:
+        - !Ref SampleManagedPolicy
       
   SampleManagedPolicy:
     Type: 'AWS::IAM::ManagedPolicy'
