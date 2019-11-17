@@ -13,4 +13,5 @@ Resources:
           - Action:
             - ec2:Describe*
             - iam:CreateServiceLinkedRole
-            Resource: "arn:aws:ec2:*:*:volume/*"
+            Resource: 'arn:aws:ec2:*:*:volume/*'
+            Effect: Allow
