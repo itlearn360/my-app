@@ -12,7 +12,8 @@ Resources:
             Effect: Allow
             Action:
               - iam:*
-            Resource: *
+            Resource:
+              - "*"
 
   CodeBuildCIRole:
     Type: AWS::IAM::Role
